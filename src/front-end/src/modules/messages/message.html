@@ -1,0 +1,24 @@
+<md-content class="md-padding">
+    <div flex-xs flex-gt-xs="100" layout="column">
+        <md-card md-theme="{{msg.isStarred ? 'blue' : 'default'}}" ng-repeat="msg in vm.allMessages">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">{{msg.subject}}
+                    <span class="pull-right" style="cursor: pointer;border: 0px;" ng-click="vm.delete(msg.id);"aria-hidden="true">x</span>
+                    </span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-divider></md-divider>
+            <md-card-content ng-bind="msg.preview" style="padding-bottom:5px; "></md-card-content>
+            <md-card-content>
+                <div><b>From</b> : <span ng-repeat="part in msg.participants">{{part}}{{!$last ? ', ':''}}</span></div>
+                <div>
+                    <b>Time</b><span> : {{vm.moment(msg.ts).format('HH:mm:ss Do MMM, YYYY')}}</span></div>
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button class="md-raised md-primary" ng-click="vm.getMsg(msg.id);">View</md-button>
+                <md-button class="md-raised" ng-click="msg.isRead = !msg.isRead">{{msg.isRead ? 'Mark as unread' : 'Mark as read'}}</md-button>
+            </md-card-actions>
+        </md-card>
+    </div>
+</md-content>

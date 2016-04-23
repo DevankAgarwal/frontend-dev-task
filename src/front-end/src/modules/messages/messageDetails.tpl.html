@@ -1,0 +1,23 @@
+<md-dialog aria-label="amc" ng-cloak style="min-height: 300px;">
+    <form>
+        <md-dialog-content>
+            <div class="md-dialog-content" style="padding-bottom: 5px;">
+                From :
+                <span ng-repeat="part in vm.msg.participants">
+                    {{part.name}} ({{part.email}}){{!$last ? ', ': ''}}
+                </span>
+            </div>
+        </md-dialog-content>
+        <md-toolbar flex>
+            <div class="md-toolbar-tools">
+                <h2>{{vm.msg.subject}}</h2>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <p>{{vm.msg.body}}
+                </p>
+            </div>
+        </md-dialog-content>
+    </form>
+</md-dialog>

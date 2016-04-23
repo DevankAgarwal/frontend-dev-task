@@ -1,16 +1,12 @@
 /**
  * @author: Ashwin
  */
-module.exports = function (router) {
+module.exports = function(router) {
 
     var path = require('path');
 
-    router.get('/', function (req, res, next) {
-        // For some reason, you don't want to use jade, this is how you can use your own HTML.
-        //res.sendFile(_getViewPath('index_htm.html'));
-        //return;
-
-        res.render('index', {title: 'Front-End Challenge'});
+    router.get('/', function(req, res, next) {
+        res.render('index', { title: 'Front-End Challenge' });
     });
 
     /**
@@ -20,7 +16,7 @@ module.exports = function (router) {
      * @param fileName
      * @private
      */
-    var _getViewPath = function (fileName) {
+    var _getViewPath = function(fileName) {
         return path.resolve(__dirname + '/../../views/web/' + fileName);
     };
 };
