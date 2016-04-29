@@ -1,6 +1,6 @@
 <md-content class="md-padding">
     <div flex-xs flex-gt-xs="100" layout="column">
-        <md-card md-theme="{{msg.isStarred ? 'blue' : 'default'}}" ng-repeat="msg in vm.allMessages">
+        <md-card md-theme="{{msg.isStarred ? 'starred' : 'default'}}" ng-repeat="msg in vm.allMessages">
             <md-card-title>
                 <md-card-title-text>
                     <span class="md-headline">{{msg.subject}}
